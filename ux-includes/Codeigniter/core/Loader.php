@@ -70,21 +70,22 @@ class CI_Loader {
 	 *
 	 * @var	array
 	 */
-	protected $_ci_library_paths =	array(APPPATH, BASEPATH);
+	
+	protected $_ci_library_paths =	array(APPPATH, BASEPATH,UXINCLUDES);
 
 	/**
 	 * List of paths to load models from
 	 *
 	 * @var	array
-	 */
-	protected $_ci_model_paths =	array(APPPATH);
+	 */ 
+	protected $_ci_model_paths =	array(APPPATH,UXINCLUDES);
 
 	/**
 	 * List of paths to load helpers from
-	 *
+	 * 
 	 * @var	array
 	 */
-	protected $_ci_helper_paths =	array(APPPATH, BASEPATH);
+	protected $_ci_helper_paths =	array( BASEPATH,UXINCLUDES);//remove from uxigniter APPPATH,
 
 	/**
 	 * List of cached variables

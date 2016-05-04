@@ -115,14 +115,26 @@ class CI_Lang {
 		if ($return === FALSE && isset($this->is_loaded[$langfile]) && $this->is_loaded[$langfile] === $idiom)
 		{
 			return;
-		}
+		} 
 
+		
 		// Load the base file, so any others found can override it
 		$basepath = BASEPATH.'language/'.$idiom.'/'.$langfile;
 		if (($found = file_exists($basepath)) === TRUE)
 		{
 			include($basepath);
 		}
+		//@uxigniter
+		// Load the base file, so any others found can override it
+		if($found!==TRUE){
+			$uxpath = str_replace('ux-includes','ux-content',UXINCLUDES).'languages/'.$idiom.'/'.$langfile;
+			
+			if (($found = file_exists($uxpath)) === TRUE)
+			{
+				include($uxpath);
+			}
+		}
+		
 
 		// Do we have an alternative path to look in?
 		if ($alt_path !== '')

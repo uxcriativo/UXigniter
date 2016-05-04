@@ -70,7 +70,7 @@ class CI_Config {
 	 * @used-by	CI_Loader
 	 * @var		array
 	 */
-	public $_config_paths =	array(APPPATH);
+	public $_config_paths =	array(APPPATH,UXINCLUDES);
 
 	// --------------------------------------------------------------------
 
@@ -106,7 +106,7 @@ class CI_Config {
 			{
 				$base_url = 'http://localhost/';
 			}
-
+			$base_url = str_replace('127.0.0.1',$_SERVER['HTTP_HOST'],$base_url);
 			$this->set_item('base_url', $base_url);
 		}
 

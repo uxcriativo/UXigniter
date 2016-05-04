@@ -1,4 +1,6 @@
 <?php
+
+
 /**
  * CodeIgniter
  *
@@ -97,7 +99,7 @@ switch (ENVIRONMENT)
  * This variable must contain the name of your "system" directory.
  * Set the path if it is not in the same directory as this file.
  */
-	$system_path = 'system';
+	$system_path = 'ux-includes/Codeigniter/';
 
 /*
  *---------------------------------------------------------------
@@ -114,7 +116,7 @@ switch (ENVIRONMENT)
  *
  * NO TRAILING SLASH!
  */
-	$application_folder = 'application';
+	$application_folder = 'ux-admin/';
 
 /*
  *---------------------------------------------------------------
@@ -267,7 +269,7 @@ switch (ENVIRONMENT)
 	}
 
 	define('APPPATH', $application_folder.DIRECTORY_SEPARATOR);
-
+	
 	// The path to the "views" directory
 	if ( ! isset($view_folder[0]) && is_dir(APPPATH.'views'.DIRECTORY_SEPARATOR))
 	{
@@ -302,9 +304,8 @@ switch (ENVIRONMENT)
 		echo 'Your view folder path does not appear to be set correctly. Please open the following file and correct this: '.SELF;
 		exit(3); // EXIT_CONFIG
 	}
-
-	define('VIEWPATH', $view_folder.DIRECTORY_SEPARATOR);
-
+	define('UXINCLUDES',str_replace('\Codeigniter','',BASEPATH));
+	define('VIEWPATH', APPPATH.'views'.DIRECTORY_SEPARATOR);
 /*
  * --------------------------------------------------------------------
  * LOAD THE BOOTSTRAP FILE
