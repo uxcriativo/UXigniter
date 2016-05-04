@@ -13,7 +13,7 @@
  * @version   3.0
  */
 
-require_once FCPATH."../Smarty/Smarty.class.php";
+require_once FCPATH."../third_party/Smarty/Smarty.class.php";
 
 class CI_Smarty extends Smarty {
 
